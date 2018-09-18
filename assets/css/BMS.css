@@ -1,0 +1,37 @@
+
+#BMSscale{
+    background-color: #424558;
+    border: solid black 3px;
+    width: 220px;
+    margin-top: 50px;
+    color: white;
+    list-style-type: none;
+    text-align: left;
+    margin-bottom: 50px;
+}
+table{
+    background-color: #424558;
+    border: solid black 3px;
+    list-style-type: none;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    color: white;
+}
+.linkInsane{
+    background-color: #424558;
+    border: solid black 3px;
+    list-style-type: none;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 220px;
+    margin-left: 50px;
+    color: white;
+    font-size: 20px;
+}
+.InsaneRate{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
