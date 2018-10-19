@@ -1,4 +1,4 @@
-<?php include('view/menu.php') ?>
+<?php include '../view/header.php' ?>
 <div class="container-fluid">
     <div class="bg-dark offset-md-2 col-md-8 border-dark">
         <div class="text-center text-warning card-text mt-5 ">
@@ -41,4 +41,5 @@
     </div>
 </div>
 </body>
+<?php include '../view/footer.php' ?>
 </html>

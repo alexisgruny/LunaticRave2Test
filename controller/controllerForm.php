@@ -85,7 +85,6 @@ if (isset($_POST['email'])) {
         $formErrorSignIn['email'] = 'Champ requis.';
     }
 }
-include('view/menu.php')
 ?>
 
 

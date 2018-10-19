@@ -1,0 +1,5 @@
+<ifModule mod_rewrite.c>
+ErrorDocument 404 /view/error404.php 
+</ifModule>
+
+

@@ -1,5 +1,4 @@
-<?php include('view/menu.php') ?>
-<?php include('stairwayTable.php') ?>
+<?php include '../view/header.php' ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3" id="BMSscale">
@@ -15,15 +14,8 @@
         <div class="col-md-8 linkInsane">
         <p class="InsaneRate"> <?= lien() ?> </p>
         </div>
-        <table class=" col-md-8">
-            <thead>
-                <?= $tableHeader[0][0] ?>
-            </thead>
-            <tbody>
-                <?= $tableContent[0][0] ?>
-            </tbody>
-        </table>
     </div>
 </div>
 </body>
+<?php include '../view/footer' ?>
 </html>
