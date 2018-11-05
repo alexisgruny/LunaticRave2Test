@@ -1,4 +1,7 @@
-<?php include '../view/header.php' ?>
+<?php 
+session_start();
+include '../view/header.php';
+?>
 <div class="container-fluid">
     <div class="bg-dark offset-md-2 col-md-8 border-dark card mt-5 font-text">
         <div class="text-center text-white card-text mt-5 ">

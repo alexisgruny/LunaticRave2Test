@@ -65,17 +65,23 @@
                         <a class="dropdown-item text-muted" href="../view/playerList.php">Liste des joueurs</a>
                     </div>
                 </li>
+                <?php if(isset($_SESSION['pseudo'])){ ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle mt-1 mr-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Profil
+                        <?= $_SESSION['pseudo']?>
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item text-muted" href="../view/friendsRival.php">Rival/Amis</a>
-                        <a class="dropdown-item text-muted" href="../view/profil.php">Profil</a>
+                        <a class="dropdown-item text-muted" href="../view/profil.php?id=<?=$_SESSION['id']?>">Profil</a>
                     </div>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
-                    <a class="nav-link mt-1 mr-5" href="/view/ConnexionForm.php">Connexion</a>
+                    <?php if(isset($_SESSION['isConnect']) == true){ ?>
+                    <a class="nav-link mt-1 mr-5" href="../controller/controllerDisconnected.php">Déconnexion</a>
+                    <?php } else { ?>
+                    <a class="nav-link mt-1 mr-5" href="/view/ConnexionForm.php">Connexion/Inscription</a>
+                    <?php } ?>
                     <a> 
                 </li>
             </ul>
