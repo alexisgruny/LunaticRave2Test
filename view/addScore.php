@@ -2,6 +2,7 @@
 include '../model/modelDatabase.php';
 include '../model/modelScores.php';
 include '../model/modelUser.php';
+include '../model/modelMusicList.php';
 include '../controller/controllerAddScore.php';
 include '../view/header.php';
 ?>
@@ -16,7 +17,12 @@ include '../view/header.php';
             <div class="row mt-5 d-flex justify-content-around">
                 <form method="post" class="col-md-5 bg-dark border border-white text-center mt-3 white-text">
                     <label for="name">music</label>
-                    <select></select>
+                    <select class="selectpicker col-md-12" data-show-subtext="true" data-live-search="true" name="music">
+                        <option selected disabled > Selectionner une music </option>
+                    <?php foreach($music as $music){?>
+                        <option value="<?= $music->id?>"><?= $music->name ?></option>
+                    <?php } ?>
+                    </select>
                     <label for="exScore">ExScore</label>
                     <input class="form-control"  id="exScore" type="text" name="exScore" value="<?= isset($newScore->exScore) ? $newScore->exScore : '' ?>" />
                     <p class="text-warning"><?= isset($formError['exScore']) ? $formError['exScore'] : ''; ?></p>

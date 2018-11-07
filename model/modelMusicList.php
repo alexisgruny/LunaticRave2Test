@@ -1,8 +1,20 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class music extends database{
+    public $id;
+    public $name;
+    public $link;
+    public $difficulty;
+    public $maxNote;
+    
+    function showMusicList(){
+        $request = 'SELECT `id`, `name`, `link`, `difficulty`, `maxNote` '
+                . 'FROM `A12BC_musicList`';
+        //Préparation de la requête SQL pour éviter les injection de code SQL
+        $showMusicList = $this->db->prepare($request);
+        // si la requête c'est éxécuté retourne un object dans la variable $showUser
+        if ($showMusicList ->execute()) {
+            return $showMusicList->fetchAll(PDO::FETCH_OBJ);
+        }
+    }
+}
 

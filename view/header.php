@@ -14,6 +14,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet" />
         <!-- Police -->
         <link href="https://fonts.googleapis.com/css?family=Mirza|Slabo+27px" rel="stylesheet">
+        <!-- select -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
         <!-- Style personnalisé -->
         <link rel="stylesheet" href="/assets/css/style.css" />
         <!-- JQuery -->
@@ -24,6 +26,10 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+        <!-- select JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+        <!-- Script personalisé -->
+        <script type="text/javascript" src="../assets/js/script.js"></script>
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  font-title font-weight-bold">
         <a class="text-blue mt-1 mr-5"href="../index.php">LunaticRave 2</a>
@@ -78,7 +84,7 @@
                 <?php } ?>
                 <li class="nav-item">
                     <?php if(isset($_SESSION['isConnect']) == true){ ?>
-                    <a class="nav-link mt-1 mr-5" href="../controller/controllerDisconnected.php">Déconnexion</a>
+                    <a class="nav-link mt-1 mr-5" href="../controller/controllerHeader.php">Déconnexion</a>
                     <?php } else { ?>
                     <a class="nav-link mt-1 mr-5" href="/view/ConnexionForm.php">Connexion/Inscription</a>
                     <?php } ?>

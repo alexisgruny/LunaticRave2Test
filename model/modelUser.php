@@ -51,6 +51,24 @@ class user extends database {
     }
 
     /*
+     *  Permet de modifier le role d'un utilisateur
+     */
+    
+    public function modifyRole() {
+        $request = 'UPDATE `A12BC_user` '
+                . 'SET `id_A12BC_role` = :idRole '
+                . 'WHERE `id` = :id ';
+//prépare la requéte sql dans la database
+        $modifyRole = $this->db->prepare($request);
+        $modifyRole->bindValue(':id', $this->id);
+        $modifyRole->bindValue(':idRole', $this->role);
+// si la requéte est préparé , je l'execute
+        $updateUser = $modifyRole->execute();
+//et je retourne tout les résultat dans un tableau
+        return $updateUser;
+    }
+    
+    /*
      *  MÉTHODE checkIfUserExist() Permet de vérifier qu'un utilisateur n'existe pas déja 
      */
     
@@ -81,8 +99,9 @@ class user extends database {
     
         public function showUser() {
         //déclaration de la requête SQL qui permet de récupérer les champs id et pseudo de la table lr2User
-        $request = 'SELECT `id`, `pseudo`, `email` '
-                . 'FROM `A12BC_user` ';
+        $request = 'SELECT `A12BC_user`.`id`, `A12BC_user`.`pseudo`, `A12BC_user`.`email`, `A12BC_role`.`name` '
+                . 'FROM `A12BC_user` '
+                . 'INNER JOIN `A12BC_role` ON `A12BC_user`.`id_A12BC_role` = `A12BC_role`.`id`';
         //Préparation de la requête SQL pour éviter les injection de code SQL
         $showUser = $this->db->prepare($request);
         // si la requête c'est éxécuté retourne un object dans la variable $showUser
@@ -92,9 +111,10 @@ class user extends database {
     }
     
     public function userById() {
-        $request ='SELECT `id`, `pseudo`, `email`, `password` '
+        $request ='SELECT `A12BC_user`.`id`, `A12BC_user`.`pseudo`, `A12BC_user`.`email`, `A12BC_role`.`name` '
                 . 'FROM `A12BC_user` '
-                . 'WHERE `id` = :id ';
+                . 'INNER JOIN `A12BC_role` ON `A12BC_user`.`id_A12BC_role` = `A12BC_role`.`id`'
+                . 'WHERE `A12BC_user`.`id` = :id ';
         $userId = $this->db->prepare($request);
         $userId->bindValue(':id', $this->id, PDO::PARAM_INT);
         $userId->execute();
@@ -131,5 +151,16 @@ class user extends database {
             }
         }
         return $state;
+    }
+    
+     /* 
+     *  MÉTHODE userDelete() Permet de supprimer un utilisateur 
+     */
+    
+    public function userDelete() {
+        $deleteUser = $this->db->prepare('DELETE FROM `A12BC_user` WHERE `id` = :id');
+        $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $deleteUser->execute();
+        return $deleteUser;
     }
 }

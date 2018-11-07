@@ -3,6 +3,9 @@
 $formError = array();
 $regexNumber = '/^[0-9]+$/';
 
+$musicList = new music ();
+$music = $musicList->showMusicList();
+    
 if (isset($_POST['addScore'])) {
 //Si LastName existe , la passer au test regex , si elle passe la stocker dans $lastName sinon c'est vide
     if (isset($_POST['exScore'])) {

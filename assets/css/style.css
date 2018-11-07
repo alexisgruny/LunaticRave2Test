@@ -25,11 +25,9 @@ body{
 }
 table{
     background-color: #424558;
-    border: solid black 3px;
+    border: solid white 1px;
     list-style-type: none;
     text-align: left;
-    margin-top: 50px;
-    margin-left: 50px;
     color: white;
 }
 .linkInsane{
@@ -58,4 +56,9 @@ h1, h2, h3, h4, h5, h6, h7, h8, nav{
 }
 nav{
     font-size: 25px;
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+    margin:0 0 0 15px;
 }
