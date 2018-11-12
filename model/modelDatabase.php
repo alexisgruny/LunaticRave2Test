@@ -12,7 +12,7 @@ class database {
         //on test es erreurs avec try/catch
         //si tout est bon , on ce connecte a la base de donnée
         try {
-            $this->db = new PDO('mysql:host=' . $this->serverName . ';dbname=' . $this->databaseName, $this->username, $this->password);
+            $this->db = new PDO('mysql:host=' . $this->serverName . ';dbname=' . $this->databaseName . ';charset=utf8', $this->username, $this->password);
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // attrape le message d'érreur si il y'en a une
         } catch (PDOException $error) {

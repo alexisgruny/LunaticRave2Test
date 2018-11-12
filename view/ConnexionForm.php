@@ -9,10 +9,12 @@ include '../view/header.php' ;
     <?php if (isset($_POST['signIn']) && (count($formErrorSignIn) == 0)) { ?>
                 <p class="text-center text-white font-weight-bold mt-5">Votre formulaire a bien étais envoyé</p>
                 <!--Sinon affiche le formulaire-->
-            <?php } else if (isset($_POST['submit']) && (isset($formErrorSignIn['submit']))) { ?>
-                <p> <?= $formErrorSignIn['submit'] ?> </p>  
+            <?php } else if (isset($_POST['signIn']) && (isset($formErrorSignIn['signIn']))) { ?>
+                <p> <?= $formErrorSignIn['signIn'] ?> </p>  
         <?php }else { ?>
     <div class="row mt-5 d-flex justify-content-around">
+        
+        <!-- Formulaire de connection -->
         <form method="POST" class="col-md-5 bg-dark border border-white text-center mt-3 white-text">
             <label for="pseudo" class="mt-3">Pseudonyme</label>
             <input class="form-control mt-3"  id="pseudo" type="text" name="pseudo" value="<?= isset($pseudo) ? $pseudo : '' ?>" />
@@ -23,6 +25,9 @@ include '../view/header.php' ;
             <input class="mt-3 text-white bg-dark mb-3" type="submit" value="Me connecter" name="logIn"/>
             <P><?= isset($message)? $message : '' ?></p>
         </form>
+        <!-- Fin du formulaire de connection -->
+        
+        <!-- Formulaire de connection -->
         <form method="post" class="col-md-5 bg-dark border border-white text-center mt-3 white-text">
             <label for="pseudoSignIn">Pseudonyme</label>
             <input class="form-control"  id="pseudoSignIn" type="text" name="pseudoSignIn" value="<?= isset($newUser->pseudoSignIn) ? $newUser->pseudoSignIn : '' ?>" />
@@ -38,6 +43,8 @@ include '../view/header.php' ;
             <p class="text-warning"><?= isset($formErrorSignIn['email']) ? $formErrorSignIn['email'] : ''; ?></p>
             <input class="text-white bg-dark mb-3" type="submit" value="S'inscrire" name="signIn"/>
         </form>
+        <!-- Fin du formulaire de connection -->
+        
         <?php } ?>
     </div>
 </div>

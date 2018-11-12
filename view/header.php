@@ -53,13 +53,13 @@
                         BMS
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-muted" href="#">☆ Normal</a>
-                        <a class="dropdown-item text-muted" href="#">○ normal N°2</a>
-                        <a class="dropdown-item text-muted" href="#">★ Insane</a>
-                        <a class="dropdown-item text-muted" href="#">▼ Insane N°2</a>
-                        <a class="dropdown-item text-muted" href="#">◆ Longue note</a>
-                        <a class="dropdown-item text-muted" href="#">★★ Overjoy</a>
-                        <a class="dropdown-item text-muted" href="#">◆◆ Overoy longue note</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=1&id=<?= $_SESSION['id'] ?>">☆ Normal</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=2&id=<?= $_SESSION['id'] ?>">○ Normal N°2</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=3&id=<?= $_SESSION['id'] ?>">★ Insane</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=4&id=<?= $_SESSION['id'] ?>">▼ Insane N°2</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=5&id=<?= $_SESSION['id'] ?>">◆ Longue note</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=6&id=<?= $_SESSION['id'] ?>">★★ Overjoy</a>
+                        <a class="dropdown-item text-muted" href="../view/BMS.php?scale=7&id=<?= $_SESSION['id'] ?>">◆◆ Overoy longue note</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -77,11 +77,14 @@
                         <?= $_SESSION['pseudo']?>
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-muted" href="../view/addScore.php?id=<?=$_SESSION['id']?>">Ajout de score</a>
+                        <a class="dropdown-item text-muted" href="../view/addMusic.php">Ajout d'une BMS</a>
+                        <a class="dropdown-item text-muted" href="../view/newNews.php">Crée une news</a>
                         <a class="dropdown-item text-muted" href="../view/friendsRival.php">Rival/Amis</a>
                         <a class="dropdown-item text-muted" href="../view/profil.php?id=<?=$_SESSION['id']?>">Profil</a>
                     </div>
                 </li>
-                <?php } ?>
+                <?php } ?>0
                 <li class="nav-item">
                     <?php if(isset($_SESSION['isConnect']) == true){ ?>
                     <a class="nav-link mt-1 mr-5" href="../controller/controllerHeader.php">Déconnexion</a>

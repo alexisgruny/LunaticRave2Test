@@ -14,14 +14,13 @@ body{
     color: red;
 }
 #BMSscale{
-    background-color: #424558;
-    border: solid black 3px;
-    width: 220px;
+    border: solid white 1px;
     margin-top: 50px;
     color: white;
     list-style-type: none;
     text-align: left;
-    margin-bottom: 50px;
+    margin-bottom: 200px;
+    font-size: 18px
 }
 table{
     background-color: #424558;
@@ -61,4 +60,14 @@ li{
     list-style-type: none;
     display: inline-block;
     margin:0 0 0 15px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
