@@ -1,3 +1,4 @@
+<!-- Include des models, controller et du header -->
 <?php
 session_start();
 include '../model/modelDatabase.php';
@@ -7,15 +8,21 @@ include '../model/modelMusicList.php';
 include '../controller/controllerAddMusic.php';
 include '../view/header.php';
 ?>
+<!-- Fin des includes -->
+
 <body>
     <div class="container-fluid">
+        <!-- Renvois un message si la musique a bien étais ajouté en base -->
         <?php if (isset($_POST['addBms']) && (count($formError) == 0)) { ?>
             <p class="text-center text-white font-weight-bold mt-5">Votre BMS est en cours d'enregistrement</p>
-            <!--Sinon affiche le formulaire-->
+            <!-- Sinon renvois un message d'érreur -->
         <?php } else if (isset($_POST['addBms']) && (isset($formError['submit']))) { ?>
-            <p> <?= $formError['submit'] ?> </p>  
+            <p> <?= $formError['submit'] ?> </p>
+            <!-- Sinon affiche le fomulaire -->
         <?php } else { ?>
             <div class="row mt-5 d-flex justify-content-around">
+
+                <!-- Début du formulaire d'ajout d'une musique -->
                 <form method="post" class="col-md-5 bg-dark border border-white text-center mt-3 white-text">
                     <label for="name">Nom de la BMS</label>
                     <input class="form-control"  id="name" type="text" name="name" value="<?= isset($newMusic->name) ? $newMusic->name : '' ?>" />
@@ -32,17 +39,23 @@ include '../view/header.php';
                     <label for="scaling">Scaling</label>
                     <select class="form-control" name='scaling'>
                         <option></option>
-                        <?php foreach($showScale as $showScale){ ?>
-                        <option value='<?= $showScale->id ?>'><?= $showScale->scaleType ?> </option>
+                        <?php foreach ($showScale as $showScale) { ?>
+                            <option value='<?= $showScale->id ?>'><?= $showScale->scaleType ?> </option>
                         <?php } ?>
                     </select>
                     <input class="text-white bg-dark mt-3 mb-3" type="submit" value="ajouter" name="addBms"/>
                 </form>
+                <!-- Fin du formulaire -->
+
             <?php } ?>
         </div>
     </div>
 </body>
 </div>
+
+<!-- Include du footer -->
 <?php include '../view/footer.php' ?>
+
+</html>
 
 

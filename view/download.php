@@ -1,11 +1,15 @@
+<!-- Démarrage de la session et include du header -->
 <?php 
 session_start();
 include '../view/header.php' ;
 ?>
+<!-- FIN -->
+
+<!-- Text : Comment Télécherger LR2 -->
 <div class="container-fluid">
-    <div class="bg-dark offset-md-2 col-md-8 border-dark">
-        <div class="text-center text-warning card-text mt-5 ">
-            <h1 class="text-danger">Télécharger le jeu</h1>
+    <div class="bg-dark offset-md-1 col-md-10 card border mt-5 font-text">
+        <div class="text-center font-text mt-5 text-white  ">
+            <h1 class="font-weight-bold blue-text">TÉLÉCHARGEMENT</h1>
 
             <p>Télécharger le jeu avec le lien ci-dessous, cépendant, ne surtout pas l'extraire tout de suite. <br />
                 ---> <a href="http://www.dream-pro.info/~lavalse/LR2_100201.zip"> LR2 lien</a> <--- <br />
@@ -14,7 +18,7 @@ include '../view/header.php' ;
                     Vous n'êtes pas obligés de revenir à votre locale original après modification.</span></p>
 
 
-            <h2 class="text-danger">Configurer le jeu</h2>
+            <h2 class="font-weight-bold blue-text">Configurer le jeu</h2>
 
             <p>Une fois le contenu extrait, lancez "LR2.exe" <br />(Attention, si vous n'êtes plus en Japanese Locale, vous aurez besoin de lancer le jeu en Japanese Applocale, sur Windows10 je vous conseille<span class="text-danger"> Locale Emulator </span>. La meilleure chose à faire étant de TOUJOURS lancer le jeu en Applocale japanese et en administrateur.)</p>
 
@@ -29,7 +33,7 @@ include '../view/header.php' ;
             <p class="mt-5">Vous arriverez à cette fenêtre, changez le language en haut pour English pour être plus à l'aise.
                 Le jeu va alors vous dire d'ajouter des musiques dans le JUKEBOX. <br /> Vous trouverez des starter packs sur cette page : <a href="http://news.keysounds.net/starterpacks"> Lien BMS </a> <br /> (Ce sont des .exe à extraire dans un dossier où vous stockerez toutes vos BMS)</p>
 
-            <h3 class="text-danger">Ajouter des BMS</h3>
+            <h3 class="font-weight-bold blue-text">Ajouter des BMS</h3>
 
             <p> Il suffit de glisser le dossier dans le Jukebox</p>
 
@@ -44,5 +48,8 @@ include '../view/header.php' ;
     </div>
 </div>
 </body>
+<!-- FIN -->
+
+<!-- Include du footer -->
 <?php include '../view/footer.php' ?>
 </html>

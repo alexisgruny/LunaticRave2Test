@@ -1,23 +1,27 @@
+<!-- Démarrage de la session et include du header -->
 <?php
 session_start();
 include('../view/header.php');
 ?>
+<!-- FIN -->
+
+<!-- Text : Comment configurer LR2 -->
 <body>
     <div class="container-fluid">
-        <div class="bg-dark offset-md-2 col-md-8 border-dark card mt-5 font-text">
+        <div class="bg-dark offset-md-1 col-md-10 card border mt-5 font-text">
             <div class="text-center font-text mt-5 text-white ">
-                <h1 class="font-weight-bold blue-text">MAIN</h1>
+                <h1 class="font-weight-bold blue-text">CONFIGURATION</h1>
 
                 <p>Le plupart des options sont compréhensibles. <br />
                     Song reload types are in case you update your song folders by adding new songs to already indexed folders. Default is Auto Reload Type 2</p>
 
                 <p>Si vous voulez sauvegarder vos scores en ligne, vous devez cocher la case "LR2 InternetRanking". Les cases en dessous sont pour les rivaux, si vous voulez comparer vos scores avec vos rivaux, cochez-les!</p>
 
-                <h2 class="font-weight-bold blue-text">JUKEBOX2</h2>
+                <h2 class="font-weight-bold blue-text mt-5">JUKEBOX2</h2>
 
                 <p>Ces options sont pour créer des dossiers "custom".</p>
 
-                <ul class="text-left">
+                <ul class="text-left mt-5">
                     <li>RANDOM SELECT: Sélectionne une chart random
                     <li>FAVORITE FOLDER: Créer un dossier qui contient les BMS marquées comme favorites.
                     <li>IGNORE FOLDER: Créer un dossier qui contient les BMS marquées avec IGNORE.
@@ -29,8 +33,8 @@ include('../view/header.php');
 
                 Vous pouvez également choisir le nombre maximum de résultats lorsque vous ferez une recherche en jeu, et aussi choisir pendant combien de temps une BMS sera marquée comme "NEW"
 
-                <h3 class="font-weight-bold blue-text">OPTION</h3>
-                <ul class="text-left">
+                <h3 class="font-weight-bold blue-text mt-5">OPTION</h3>
+                <ul class="text-left mt-5">
                     <li>HI-SPEED: Fixez la plus petite et la plus haute hi-speed (scroll speed) et fixez avec quelle marge ça s'ajuste quand vous la changez en jeu.
                     <li>Vous pouvez ajuster la hi-speed de base (x1 speed modifier)
                     <li>Vous pouvez aussi modifier la marge lorsque vous ajustez la lane cover. 
@@ -49,8 +53,8 @@ include('../view/header.php');
                     <li>Assign up/down key to hs change: Touches haut et bas changeront la hi-speed.
                 </ul>
 
-                <h4 class="font-weight-bold blue-text">SYSTEM</h4>
-                <ul class="text-left">
+                <h4 class="font-weight-bold blue-text mt-5">SYSTEM</h4>
+                <ul class="text-left mt-5">
                     <li>16bit color: Si vous utilisez LR2 sur un très vieux ordinateur.
                     <li>Wait for vsync: Active la vsync. Le jeu sera cappé à 60fps, mais cela va causer de l’input lag.
                     <li>Multi-monitor settings: Vous pouvez choisir sur quel écran le jeu se lance. Les options sont “Main”, “Sub1”, et “Sub2”. (Utilisez juste main)
@@ -64,11 +68,15 @@ include('../view/header.php');
                 <p>Changer le Play options ingame directement dans le launcher <br />
                     Vous pouvez changer le play option ingame en cliquant sur le bouton à côté de "Play"</p>
 
-                <img class="col-md-10" src="http://echo.s-ul.eu/buNfzRYh.gif" />
+                <img class="col-md-10 mt-5 mb-5" src="http://echo.s-ul.eu/buNfzRYh.gif" />
             </div>
         </div>
     </div>
 </body>
+<!-- FIN -->
+
+<!-- Include du footer -->
 <?php include '../view/footer.php' ?>
+
 </html>
 

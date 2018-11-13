@@ -1,3 +1,4 @@
+<!-- Include des models, controller et du header -->
 <?php
 session_start();
 include '../model/modelDatabase.php';
@@ -5,15 +6,22 @@ include '../model/modelUser.php';
 include '../controller/controllerModify.php';
 include '../view/header.php';
 ?>
+<!-- FIN -->
+
+
 <body>
+    <!-- Renvois un message si la modification a bien étais ajouté en base -->
     <?php if (isset($_POST['modify']) && (count($formErrorModify) == 0)) { ?>
         <p class="text-center text-white font-weight-bold mt-5">Votre modification a étais pris en compte.</p>
-        <!--Sinon affiche le formulaire-->
+        <!-- Sinon affiche un message d'érreur -->
     <?php } else if (isset($_POST['modify']) && (isset($formErrorModify['modify']))) { ?>
+        <!-- Sinon affiche le fomulaire -->
         <p> <?= $formErrorModify['modify'] ?> </p>  
     <?php } else { ?>
         <div class="container-fluid">
             <div class="row mt-5 d-flex justify-content-around">
+                
+                <!-- Formulaire de modification -->
                 <form method="post" class="col-md-5 bg-dark border border-white text-center mt-3 white-text">
                     <label for="pseudo">Pseudonyme</label>
                     <input class="form-control"  id="pseudo" type="text" name="pseudo" value="<?= isset($getPassword->pseudo) ? $getPassword->pseudo : '' ?>" />
@@ -33,8 +41,11 @@ include '../view/header.php';
                     <input class="text-white bg-dark mb-3" type="submit" value="Modifier" name="modify"/>
                     <input class="text-white bg-dark mb-3" type="submit" value="Annuler" name="back"/>
                 </form>
+                <!-- Fin du formulaire -->
             <?php } ?>
         </div>
     </div>
 </body>
+
+<!-- Include du footer -->
 <?php include '../view/footer.php' ?>

@@ -1,6 +1,9 @@
 <?php
 session_start();
-include '../view/header.php'
+include '../model/modelDatabase.php';
+include '../model/modelUser.php';
+include '../controller/controllerPlayerProfil.php';
+include '../view/header.php';
 ?>
 <body>
     <div class="container-fluid">
@@ -35,7 +38,7 @@ include '../view/header.php'
 
                                     <!--Footer-->
                                     <div class="justify-content-center bg-dark">
-                                        <a type="button" class="btn grey darken-3 mb-2 col-md-5 text-white"  href="playerList.php?id=<?= $_SESSION['id'] ?>&delete=1">Supprimer</a>
+                                        <a type="button" class="btn grey darken-3 mb-2 col-md-5 text-white"  href="profil.php?id=<?= $_SESSION['id'] ?>&delete=1">Supprimer</a>
                                         <a type="button" class="btn grey darken-3 mb-2 col-md-5" data-dismiss="modal">Annulé</a>
                                     </div>
                                 </div>

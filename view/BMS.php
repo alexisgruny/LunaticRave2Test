@@ -1,3 +1,4 @@
+<!-- Include des models, controller et du header -->
 <?php
 session_start();
 include '../model/modelDatabase.php';
@@ -5,6 +6,8 @@ include '../model/modelScores.php';
 include '../controller/controllerBMS.php';
 include '../view/header.php';
 ?>
+<!-- header -->
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -23,8 +26,8 @@ include '../view/header.php';
             <!-- Fin du listing -->
             
             <!-- Affichage d'un tableau de score -->
-            <table>
-                <thead>
+            <table class="col-md-7 offset-md-1 mt-5 table">
+                <thead class="bg-dark white-text">
                     <tr>
                         <th>difficulty</th>
                         <th>musique</th>
@@ -35,7 +38,7 @@ include '../view/header.php';
                         <th>Clear Type</th>
                     </tr>
                 </thead> 
-                <tbody>
+                <tbody class="grey">
                     <?php
                     foreach ($showScore as $showScore) {
                         ?>
@@ -44,7 +47,7 @@ include '../view/header.php';
                             <td><a href="<?= $showScore->link ?>"><?= $showScore->music ?></a></td>
                             <td><?= $showScore->exScore ?></td>
                             <td><?= $showScore->badpoor ?></td>
-                            <td><?= $showScore->noteHitted ?></td>
+                            <td><?= $showScore->noteHitted . '/' . $showScore->maxNote ?></td>
                             <td><?= $showScore->maxCombo ?></td>
                             <td><?= $showScore->clearType ?></td>
                         </tr>

@@ -1,3 +1,4 @@
+<!-- Include des models, controller et du header -->
 <?php
 session_start();
 include '../model/modelDatabase.php';
@@ -8,15 +9,22 @@ include '../model/modelClearType.php';
 include '../controller/controllerAddScore.php';
 include '../view/header.php';
 ?>
+<!-- Fin des includes -->
+
 <body>
     <div class="container-fluid">
+        <!-- Renvois un message si la musique a bien étais ajouté en base -->
         <?php if (isset($_POST['addScore']) && (count($formError) == 0)) { ?>
             <p class="text-center text-white font-weight-bold mt-5">Votre Score a bien étais envoyé</p>
-            <!--Sinon affiche le formulaire-->
+            <!--Sinon affiche un méssage d'érreur-->
         <?php } else if (isset($_POST['submit']) && (isset($formError['submit']))) { ?>
-            <p> <?= $formError['submit'] ?> </p>  
+            <p> <?= $formError['submit'] ?> </p>
+            <!-- Sinon affiche le fomulaire -->
         <?php } else { ?>
+            
             <div class="row mt-5 d-flex justify-content-around">
+                
+                <!-- Formulaire d'ajout de score -->
                 <form method="post" class="col-md-5 bg-dark border border-white text-center mt-3 white-text">
                     <label for="name">music</label>
                     <select class="selectpicker col-md-12" data-show-subtext="true" data-live-search="true" name="music">
@@ -48,9 +56,15 @@ include '../view/header.php';
                     <p class="text-warning"><?= isset($formError['clearType']) ? $formError['clearType'] : ''; ?></p>
                     <input class="text-white bg-dark mb-3" type="submit" value="addScore" name="addScore"/>
                 </form>
+                <!-- Fin du formulaire -->
+                
             <?php } ?>
         </div>
     </div>
 </body>
 </div>
+
+<!-- include du footer -->
 <?php include '../view/footer.php' ?>
+
+</html>

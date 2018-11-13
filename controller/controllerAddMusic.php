@@ -3,7 +3,7 @@
 //Déclaration d'un tableau d'érreur
 $formError = array();
 //Déclaration de regex
-$regexNumberLetter = '/^[0-9a-zA-Z- ★]+$/';
+$regexNumberLetter = '/^[0-9a-zA-Z- ★\[\]]+$/';
 // Instanciation de la classe Scale()
 $scale = new scale ();
 // Appel de la methode showScale()
@@ -20,7 +20,7 @@ if (isset($_POST['addBms'])) {
         //Test regex
         if (!preg_match($regexNumberLetter, $newMusic->name)) {
             // Si le champ n'est pas valide, stocker dans le tableau le rapport d'érreur
-            $formError['name'] = 'Le champ exScore est incorrect';
+            $formError['name'] = 'Le nom de la BMS est incorrect';
         }
         // verifie si le champs de nom et vide
         if (empty($newMusic->name)) {
@@ -34,7 +34,7 @@ if (isset($_POST['addBms'])) {
         //test de la regex si elle est invalide
         if (!filter_var($newMusic->link, FILTER_VALIDATE_URL)) {
             // Si le champ n'est pas valide, stocker dans le tableau le rapport d'érreur
-            $formError['link'] = 'Le champ badpoor est incorrect';
+            $formError['link'] = 'Le champ lien est incorrect';
         }
         // verifie si le champs link et vide
         if (empty($newMusic->link)) {
@@ -48,7 +48,7 @@ if (isset($_POST['addBms'])) {
         //test de la regex si elle est invalide
         if (!preg_match($regexNumberLetter, $newMusic->difficulty)) {
             // Si le champ n'est pas valide, stocker dans le tableau le rapport d'érreur
-            $formError['difficulty'] = 'Le champ maxCombo est incorrect';
+            $formError['difficulty'] = 'La difficulté est incorrect';
         }
         // verifie si le champs difficulty et vide
         if (empty($newMusic->difficulty)) {
@@ -62,7 +62,7 @@ if (isset($_POST['addBms'])) {
         //test de la regex si elle est invalide
         if (!preg_match($regexNumberLetter, $newMusic->scaling)) {
             // Si le champ n'est pas valide, stocker dans le tableau le rapport d'érreur
-            $formError['scaling'] = 'Le champ maxCombo est incorrect';
+            $formError['scaling'] = 'Le champ scale est incorrect';
         }
         // verifie si le champs scaling et vide
         if (empty($newMusic->scaling)) {
@@ -76,7 +76,7 @@ if (isset($_POST['addBms'])) {
         //test de la regex si elle est invalide
         if (!preg_match($regexNumberLetter, $newMusic->maxNote)) {
             // Si le champ n'est pas valide, stocker dans le tableau le rapport d'érreur
-            $formError['maxNote'] = 'Le champ noteHitted est incorrect';
+            $formError['maxNote'] = 'Le nombre maximum de note est incorrect';
         }
         // verifie si le champs maxNote et vide
         if (empty($newMusic->maxNote)) {
@@ -91,11 +91,8 @@ if (isset($_POST['addBms'])) {
         $check = $newMusic->checkIfMusicExist();
         // si la méthode nous renvois 0
         if ($check == '0') {
-            // on test l'appel de la méthode newMusic
-            // Si elle ne passe pas on remplie le formError avec le type d'érreur
-            if (!$newMusic->newMusic()) {
-                $formError['submit'] = 'Il y a eu un problème';
-            }
+            // Appel de la méthode newMusic
+            $newMusic->newMusic();
             // si le check retourne false il y'a un probléme lors de l'execution de la méthode
         } else if ($check === FALSE) {
             $formError['submit'] = 'Il y a eu un problème';
