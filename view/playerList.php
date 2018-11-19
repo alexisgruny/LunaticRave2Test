@@ -21,7 +21,7 @@ include '../view/header.php';
             <thead>
                 <tr>
                     <th>Pseudo</th>
-                    <th>Role</th>
+                    <th>Rôle</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
@@ -36,14 +36,14 @@ include '../view/header.php';
 
                         <!-- modal de modification de rôle-->
                         <td>
-                            <div class="modal fade right" id="ModalRole" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                            <div class="modal fade right" id="ModalRole<?= $allPlayer->id?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                  aria-hidden="t`rue">
                                 <div class="modal-dialog modal-notify modal-danger modal-side modal-top-right" role="document">
                                     <!--Content-->
                                     <div class="modal-content">
                                         <!--Header-->
                                         <div class="modal-header grey">
-                                            <p class="heading text-center">Modification du role de  <?= $allPlayer->pseudo ?></p>
+                                            <p class="heading text-center">Modification du rôle de  <?= $allPlayer->pseudo ?></p>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true" class="white-text">&times;</span>
                                             </button>
@@ -51,7 +51,7 @@ include '../view/header.php';
                                         <!--Body-->
                                         <div class="modal-bod bg-dark">
                                             <div class="col-md-12 text-center mt-2">
-                                                <p>Quel role voulez vous donner ?</p>
+                                                <p>Quel rôle voulez-vous donner ?</p>
                                             </div>
                                         </div>
                                         <!--Footer-->
@@ -66,7 +66,7 @@ include '../view/header.php';
                             </div>
                             <!-- Central Modal Danger -->
                             <div class="text-center">
-                                <a href="" data-toggle="modal" data-target="#ModalRole"><img src="/assets/img/modif.png" style="width: 25px;" /></a>
+                                <a href="" data-toggle="modal" data-target="#ModalRole<?= $allPlayer->id?>"><img src="/assets/img/modif.png" style="width: 25px;" /></a>
                             </div>
                         </td>
                         <!-- Fin de modal de modification -->
@@ -125,6 +125,7 @@ include '../view/header.php';
             <?php foreach ($allPlayer as $allPlayer) { ?>
                     <tr>
                         <td><a class="text-white" href="playerProfil.php?id=<?= $allPlayer->id ?>"><?= $allPlayer->pseudo ?></a></td>
+                        <td><a class="text-white" href="BMS.php?id=<?= $allPlayer->id ?>">Scores</a></td>
                     </tr>
                     <?php
                 }

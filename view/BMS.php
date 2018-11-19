@@ -26,15 +26,15 @@ include '../view/header.php';
             <!-- Fin du listing -->
             
             <!-- Affichage d'un tableau de score -->
-            <table class="col-md-7 offset-md-1 mt-5 table">
+            <table class="col-md-7 offset-md-1 mt-5  border table table-light table-striped">
                 <thead class="bg-dark white-text">
                     <tr>
-                        <th>difficulty</th>
-                        <th>musique</th>
-                        <th>exScore</th>
-                        <th>BP</th>
-                        <th>Note hitted</th>
-                        <th>MaxCombo</th>
+                        <th>Difficulty</th>
+                        <th>Music</th>
+                        <th>ExScore</th>
+                        <th>Bad/Poor</th>
+                        <th>Hitted note</th>
+                        <th>Max Combo</th>
                         <th>Clear Type</th>
                     </tr>
                 </thead> 
@@ -45,10 +45,10 @@ include '../view/header.php';
                         <tr>
                             <td><?= $showScore->difficulty ?></td>
                             <td><a href="<?= $showScore->link ?>"><?= $showScore->music ?></a></td>
-                            <td><?= $showScore->exScore ?></td>
+                            <td><?= $showScore->exScore . '/' . $showScore->maxNote * 2?></td>
                             <td><?= $showScore->badpoor ?></td>
                             <td><?= $showScore->noteHitted . '/' . $showScore->maxNote ?></td>
-                            <td><?= $showScore->maxCombo ?></td>
+                            <td><?= $showScore->maxCombo . '/' . $showScore->maxNote ?></td>
                             <td><?= $showScore->clearType ?></td>
                         </tr>
                     <?php } ?>

@@ -12,7 +12,7 @@ include '../view/header.php' ;
     
     <!-- Si aucune érreur , afficher un message de succée a l'utilisateur -->
     <?php if (isset($_POST['signIn']) && (count($formErrorSignIn) == 0)) { ?>
-                <p class="text-center text-white font-weight-bold mt-5">Votre formulaire a bien étais envoyé</p>
+                <p class="text-center text-white font-weight-bold mt-5">Votre formulaire a bien été envoyé</p>
                 
                 <!--Sinon affiche un message d'érreur-->
             <?php } else if (isset($_POST['signIn']) && (isset($formErrorSignIn['signIn']))) { ?>
@@ -40,7 +40,7 @@ include '../view/header.php' ;
             
             <!-- Input Submit -->
             <button class="btn btn-primary btn-md mt-5" type="submit" name="logIn">Se connecter</button>
-            <P><?= isset($message)? $message : '' ?></p>
+            <p class="text-white"><?= isset($formErrorConnect['error'])? $formErrorConnect['error'] : '' ?></p>
         </form>
         <!-- Fin du formulaire de connexion -->
         

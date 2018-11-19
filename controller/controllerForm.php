@@ -56,8 +56,10 @@ if (isset($_POST['logIn'])) {
                 header('location: ../view/profil.php?id=' . $user->id);
             } else {
                 //la connexion échoue
-                $message = 'Erreur de connection';
+                $formErrorConnect['error'] = 'Erreur de connexion';
             }
+        } else {
+            $formErrorConnect['error'] = 'Erreur de connexion';
         }
     }
 }

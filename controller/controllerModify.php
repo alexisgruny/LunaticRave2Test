@@ -1,4 +1,5 @@
 <?php
+
 // Déclaration des regex
 $regexPseudonyme = '/^[0-9A-z]+$/';
 $regexPasse = '/^[0-9A-z]+$/';
@@ -59,15 +60,13 @@ if (isset($_POST['modify'])) {
             }
         }
         // Test si la méthode s'éxecute , sinon on remplie le tableau d'érreur
-        if (!$modifyUser->modifyUser()) {
-            $formErrorModify['modify'] = 'Il y a eu un problème';
-        }
+        $modifyUser->modifyUser();
     }
 }
 
 // Redirection pour annuler la modification
-if(isset($_POST['back'])){
-    header('location: ../view/profil.php');
+if (isset($_POST['back'])) {
+    header('location: ../view/profil.php?id=' . $_SESSION['id']);
 }
 ?>
 

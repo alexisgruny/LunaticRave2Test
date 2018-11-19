@@ -72,10 +72,8 @@ class user extends database {
         // Remplacement des marqueurs nominatif
         $modifyRole->bindValue(':id', $this->id);
         $modifyRole->bindValue(':idRole', $this->role);
-        // si la requéte est préparé , je l'execute
-        $updateUser = $modifyRole->execute();
         // Execution de la requête 
-        if ($modify->execute()) {
+        if ($modifyRole->execute()) {
             return;
         } else {
             // Si la requête ne c'est pas éxécuté on stock un message d'érreur dans le tableau d'érreur pour informer l'utilisateur
@@ -131,7 +129,7 @@ class user extends database {
 
     public function userById() {
         //déclaration de la requête SQL qui permet de récupérer les champs id, pseudo, email, et rôle en fonction de l'id reçu de la table User
-        $request = 'SELECT `A12BC_user`.`id`, `A12BC_user`.`pseudo`, `A12BC_user`.`email`, `A12BC_role`.`name` '
+        $request = 'SELECT `A12BC_user`.`id`, `A12BC_user`.`pseudo`, `A12BC_user`.`email`, `A12BC_role`.`name`, `A12BC_user`.`password` '
                 . 'FROM `A12BC_user` '
                 . 'INNER JOIN `A12BC_role` ON `A12BC_user`.`id_A12BC_role` = `A12BC_role`.`id`'
                 . 'WHERE `A12BC_user`.`id` = :id ';
@@ -194,3 +192,4 @@ class user extends database {
     }
 
 }
+?>

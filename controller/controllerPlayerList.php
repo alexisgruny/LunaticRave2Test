@@ -11,10 +11,7 @@ if (isset($_GET['delete'])) {
     $deleteUser->id = $_GET['id'];
     // Appel de la méthode userDelete
     $deleteUserDone = $deleteUser->userDelete();
-    // Re-instanciation de classe user
-    $showPlayerList = NEW user();
-    // Appel de la méthode showUser
-    $allPlayer = $showPlayerList->showUser();
+    header('location: playerList.php');
 }
 
 // Modification du role
@@ -26,10 +23,7 @@ if (isset($_GET['role'])){
     $modifyRole->role = $_GET['role'];
     // Appel de la méthode modifyRole
     $modifyRoleDone = $modifyRole->modifyRole();
-    // Re-instanciatiation de la classe user
-    $showPlayerList = NEW user();
-    // Appel de la méthode showUser
-    $allPlayer = $showPlayerList->showUser();
+    header('location: playerList.php');
 }
 ?>
 

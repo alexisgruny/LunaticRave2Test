@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
         <!-- Bootstrap core CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
         <!-- Material Design Bootstrap -->
@@ -110,7 +110,6 @@
                     <?php } else { ?>
                     <a class="nav-link mt-1 mr-5" href="/view/ConnexionForm.php">Connexion/Inscription</a>
                     <?php } ?>
-                    <a> 
                 </li>
                 
             </ul>
